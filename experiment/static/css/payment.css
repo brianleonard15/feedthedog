@@ -1,0 +1,51 @@
+
+#payment_table {
+	width:           100%;
+	margin:          5px auto;
+	border-collapse: collapse;
+}
+
+#payment_table td {
+	border:       1px solid;
+	border-color: #aaa black;
+	width:        20%;
+}
+
+#payment_table #total_row td {
+	border-color: black;
+}
+
+th, #total {
+	background-color: #aad;
+	border: 		  1px solid black;
+	font:             bold 13px "Times";
+}
+
+th {
+	text-align: center;
+}
+
+td {
+	text-align:    right;
+	padding-right: 15px;
+}
+
+.odd_row {
+	background-color: white;
+}
+
+.even_row {
+	background-color: #ffe;
+}
+
+.yellow {
+	color: gold;
+}
+
+.purple {
+	color: purple
+}
+
+.blue {
+	color: blue;
+}

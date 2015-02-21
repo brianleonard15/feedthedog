@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %} Log In {% endblock %}
+{% block main %}
+{% if form.errors %}
+<span class="red">Please enter a username and password.</span>
+{% else %}
+    {% if bad_login %}
+<span class="red">That username and password combination is unrecognized.</span> 
+    {% else %}
+        {% if already_done %}
+<span class="green">You've already completed the experiment! Thanks for participating!</span>
+        {% else %}
+            {% if anonymous %}
+Thanks for participating in this experiment. Please log in above to begin - passwords are case sensitive.
+            {% else %}
+<span class="green">You're already logged in! You can continue the experiment by clicking <a href="consent/">here</a>.</span>
+            {% endif %}
+        {% endif %}
+    {% endif %}
+{% endif %}
+{% endblock %}

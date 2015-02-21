@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block extra_code %}
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'css/table.css' %}" />
+</style>
+{% endblock %}
+{% block title %}Instructions{% endblock %}
+{% block main %}
+<div class="instuctions_wrapper">
+<p>Thank you for participating in this experiment. Several foundations fund this research. Please read the instructions carefully. Please do <b>not</b> use your browser’s “back” button while taking this survey.</p>
+<p>Your decisions in this experiment will affect how much money you receive. Just for participating you will receive <b>$5</b>. You may earn up to an additional <b>$45</b>.</p>
+<p>In this game you are tasked with feeding a digital dog. The digital dog is under your care for a certain number of days. You will be allotted bucks at different points which you can use to purchase dog food.</p>
+
+<center>
+<img src="{% static 'images/dog.jpg' %}" /><br />
+An artist's conception of the digital dog you will be feeding.
+</center>
+
+<p><b>Dog:</b> The dog likes to eat. The more the dog eats, the happier the dog is. The dog’s happiness is measured in terms of tail wags. Specifically, if the dog eats <i>x</i> units of dog food, the dog has <i>x</i>^(1/2) wags. The table below gives some sample values for food and wags. The graph plots the number of wags as a function of food.</p>
+
+{% include 'table_and_graph.html' %}
+
+<p>Notice that each unit of food gives the dog more wags when the dog eats little than when the dog eats a lot. For example. If the dog eats 5 units then it is	5/2.24 = 2.23 units of food per wag. But if the dog eats 100 units, then it is 100/10 = 10 units of food per wag. So in other words, the first units of food give the hungry dog lots of additional happiness but there are diminishing returns. The 100th unit of food provides incrementally less additional happiness.</p>
+
+<p><b>Savings & Loans:</b> Each day you will receive a certain number of bucks. A single buck buys a single unit of food. All food purchased that day is eaten by the dog (you may not save food). However, you may save bucks for future days. Whenever you spend less in a day than you are allotted, the difference is automatically saved into the next day. Saved bucks accumulate interest at a rate of <i>i</i> that is specified for every day. So for example, if <i>i</i> = 60% then saving 1 buck will add 1.6 bucks to your allotment in the next day. If <i>i</i> = 100% then saving 1 buck adds 2 bucks in the next day.</p>
+
+<p>You may also take out loans to pay for food in early periods. Whenever you spend more in a period than you are allotted, the difference is automatically debited against the next period. Debts accumulate interest at a rate <i>i</i> that is specified for every period. So for example, if <i>i</i> = 60% then debiting 1 buck will decrease the allotment in the next period by 1.6 bucks. If <i>i</i> = 100% then debiting 1 buck will decrease the next period’s allotment by 2 bucks. You may sometimes borrow so much that your allotment in the next period is negative, and you must then borrow again next period to cover the debt. However, you may not borrow so much that your allotment in the final period becomes negative. The computer will automatically limit your actual spending to the amount you could afford given your allotments – if you reach this amount before the final period, the computer will automatically set spending in all future periods to zero.</p>
+<p>You will automatically spend your full final-period allotment on dog food.</p>
+<p><i>At the end of all the periods, the number of wags will be summed up. This is called a single round. You will have two practice rounds and three actual rounds. At the end of the three actual rounds, one actual round will be randomly chosen. You will be paid based on the sum of tail wags in that round. For every tail wag you earn ??? dollars.</i></p>
+        
+<center>
+<button type="button" onClick="redirect('examples')">Continue</button>
+</center>
+{% endblock %}

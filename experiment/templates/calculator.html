@@ -1,0 +1,18 @@
+
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'css/calculator.css' %}" />
+<script type="text/javascript" src="{% static 'js/calculator.js' %}"></script>
+
+<div id="calculator">
+    If you'd like to calculate the number of wags you will receive for some dollar investment, enter the dollar amount below.
+    <table id="calculator_table">
+        <tr>
+            <td class="header">Dollars:</td>
+            <td class="header">Wags:</td>
+        </tr>
+        <tr>
+            <td class="entry"><input id="calculator_entry" type="text" value="0" onKeyUp="calculate()" /></td>
+            <td id="wags" class="entry">0</td>
+        </tr>
+    </table>
+</div>

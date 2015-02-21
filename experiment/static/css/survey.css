@@ -1,0 +1,47 @@
+.form_item {
+	padding: 20px 0px;
+	overflow:   hidden;
+	width: 90%;
+	border-bottom: 1px dashed black;
+	margin: 0px auto;
+}
+
+.form_label {
+	font-weight: bold;
+	text-align: right;
+	width: 40%;
+	padding: 0px 15px;
+	float: left;
+}
+
+.checkbox_input {
+	margin: 0px;
+	border-collapse: collapse;
+}
+
+.checkbox_input td {
+	padding-bottom: 5px;
+}
+	
+.aid {
+	font: 12px "Verdana";
+	padding-left: 15px;
+}
+
+#submit {
+	text-align: center;
+	margin-top: 20px;
+}
+
+#bad_survey {
+	color: red;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: left;
+	margin-top: 10px;
+}
+
+.form_input {
+	width: 50%;
+	float: left;
+}

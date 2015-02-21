@@ -1,0 +1,17 @@
+
+.response_div {
+    width: 250px;
+    margin: 0px auto;
+}
+
+.response_header {
+    font-weight: bold;
+    padding-right: 20px;
+}
+
+.response {
+    width: 40px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    padding: 2px 2px;
+}

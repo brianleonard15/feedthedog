@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block extra_code %}
+<link rel="stylesheet" href="{% static 'css/consent.css' %}" />
+{% endblock %}
+{% block title %}Consent{% endblock %}
+{% block main %}
+<div class="text_left">
+
+<center><p class="bold underlined">Consent Form</p></center>
+
+<p>You are being asked to participate in a research project conducted by Professor Joshua Tasoff in the School of Politics and Economics at Claremont Graduate University (CGU). This research is being conducted with Matthew R. Levy at the London School of Economics.</p>
+
+<p><span class="consent_header">PURPOSE:</span>The purpose of the study is to examine how individuals make various financial decisions in riskless environments for real monetary stakes.</p>
+
+<p><span class="consent_header">PARTICIPATION:</span>If you agree to take part, you will be asked to fill out a questionnaire. During the study, we will ask you to choose between receiving different sums of money. The experiment will last about 60 minutes.</p>
+
+<p><span class="consent_header">RISKS & BENEFITS:</span>There are no known risks to you from taking part in this research. As with all research, there is a chance that confidentiality could be compromised; however, we are taking precautions to minimize this risk. There are also no direct benefits other than payment. It is our hope that the research will benefit the scientific community and lead to a greater understanding of individual decision making.</p>
+
+<p><span class="consent_header">COMPENSATION:</span>You will receive a minimum of $5 if you complete the entire experiment, and an additional payment of between $0 and $45 based on your choices and on chance. The expected combined payment is approximately $27. You will be paid by check made out in your name and mailed to an address of your choice.</p>
+
+<p><span class="consent_header">VOLUNTARY PARTICIPATION:</span>Please understand that participation is completely voluntary. Your decision whether or not to participate will in no way affect your current or future relationship with CGU or its faculty, students, or staff. You have the right to withdraw from the research at any time without penalty. You also have the right to refuse to answer any question(s) for any reason, without penalty.</p>
+
+<p><span class="consent_header">CONFIDENTIALITY:</span>Your individual privacy will be maintained in all publications or presentations resulting form this study. All of the information that we obtain from you during the research will be kept confidential. The data will be stored in electronic form. Each person will have their own code number, and no one will posses a list matching codes to names. Your choices will be held confidential at all times and will not be shared with anyone outside of the research team.</p><p>If you have any questions or would like additional information about this research, please contact me at 909-621-8460; Professor Joshua Tasoff, Department of Economics, School of Politics & Economics, Claremont Graduate University, Harper E. 204, 170 E. Tenth Street, Claremont, CA 91711; joshua.tasoffcgu.edu. The CGU Institutional Review Board, which is administered through the Office of Research and Sponsored Programs (ORSP), has reviewed this project. You may also contact ORSP at (909) 607-9406 with any questions.</p>
+
+<p>I understand the above information and have had all of my questions about participation on this research project answered. I voluntarily consent to participate in this research. </p>
+
+*********************************************************************
+
+<p>By pressing the button below reading "Continue", I certify that I am 18 years or older, that I have read this consent form and I agree to take part in this research.</p>
+<center>
+<button type="button" onClick="redirect('instructions')">Continue</button>
+</center>
+</div>
+{% endblock %}

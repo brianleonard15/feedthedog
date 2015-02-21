@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block extra_code %}
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'css/training_review.css' %}" />
+</style>
+{% endblock %}
+{% block title %}Payment{% endblock %}
+{% block main %}
+<p>We have randomly decided to pay you based on your performance in the {{ trial }} trial. To recap, your responses were:</p>
+
+<table id="review_table">
+    <tr>
+        <td class="header">Day</td>
+        <td class="header">You chose…</td>
+        <td class="header">The dog ate…</td>
+        <td class="header">The optimal allocation was…</td>
+    </tr>{% for day in days %}
+    <tr>
+        <td class="data">{{ day.day }}</td>
+        <td class="data">{{ day.response }}</td>
+        <td class="data">{{ day.wags }}</td>
+        <td class="data">{{ day.optimum }}</td>
+    </tr>{% endfor %}
+    <tr>
+        <td id="total" class="last_row header">Wags earned</td>
+        <td class="data last_row">-</td>
+        <td class="data last_row">{{ totals.wags }}</td>
+        <td class="data last_row">{{ totals.optimum }}</td>
+    </tr>
+</table>
+
+<p>Based on how many wags you received, we have chosen to pay you <span class="green">${{ payment }}.</span></p>
+
+<p>The experiment is complete! Thank you for participating!</p>
+{% endblock %}

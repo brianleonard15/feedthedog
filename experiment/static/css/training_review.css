@@ -1,0 +1,31 @@
+.training_header {
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+#review_table {
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#review_table td {
+    border: 1px solid black;
+    padding: 2px 4px;
+}
+
+#review_table .header {
+    background-color: rgb(220, 220, 220);
+    font-weight: bold;
+    text-align: center;
+}
+
+#review_table .data {
+    text-align: center;
+    font: 10pt sans-serif;
+}
+
+#review_table .last_row {
+    border-top: 2px solid black;
+}

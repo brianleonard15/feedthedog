@@ -1,0 +1,34 @@
+
+#calculator {
+    width: 300px;
+    border: 1px solid black;
+    background-color: #368;
+    padding: 3px 5px;
+    font: 10pt sans-serif;
+    color: white;
+    text-align: center;
+    margin: 0px auto 10px auto;
+}
+
+#calculator_table {
+    width: 100%;
+    margin-top: 10px;
+}
+
+#calculator_table td {
+    width: 50%;
+    font: 10pt sans-serif;
+    text-align: center;
+    color: white;
+}
+    
+
+#calculator_table .header {
+    font-weight: bold;
+}
+
+#calculator_entry {
+    width: 40px;
+    border: 1px solid black;
+    padding: 0px 2px;
+}

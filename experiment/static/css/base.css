@@ -1,0 +1,133 @@
+button {
+	margin: 0px auto 10px;
+}
+
+body {
+	margin: 0px;
+}
+
+#total_page {
+	background-color: #AAA;
+	text-align:       center;
+	overflow:         auto;
+	width: 			  100%;
+	height:			  100%;
+}
+
+#main_wrapper {
+	width:   676px;
+	margin:  20px auto 0px;
+}
+
+#top_bar {
+	width:            100%;
+	background-color: #45D;
+	margin-bottom:    10px;
+	background-color: #368;
+	position:		  relative;
+}
+
+#page_header {
+	width: 		 100%;
+}
+
+#page_header .title {
+	font-family: Georgia, serif;
+	text-align: left;
+	padding-left: 50px;
+	font-size: 	 50px;
+	color: 		 white;
+	width:		 100%;
+}
+
+#page_header .login {
+	text-align: center;
+	font:	   	12px "Times";
+}	
+
+#login_box {
+	background-color: #FFF;
+	width:            215px;
+	height:			  120px;
+	margin:			  5px;
+	display: 		  table;
+}
+
+#login_contents {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#login_table {
+	margin-left:  auto;
+	margin-right: auto;
+	padding:      10px;
+	font-size:    14px;
+}
+
+#login_table input {
+	width: 120px;
+}
+
+#login_name {
+	color: 		   black;
+	font-size: 	   15px;
+	margin-bottom: 20px;
+	height: 	   50px;
+}
+
+#main {
+	background-color: #FFF;
+	text-align:		  left;
+	padding: 		  10px 20px;
+	overflow:         hidden;
+	margin-bottom:    20px;
+}
+
+.centered {
+    text-align: center;
+}
+
+.rounded {
+	-moz-border-radius: 20px;
+	border-radius:      20px;
+}
+
+.highlight {
+	color: #368;
+}
+
+.red {
+	color: red;
+}
+
+.green {
+	color: green;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.text_left {
+    text-align: left;
+    padding:    0 20px;
+}
+
+
+
+.page_header {
+	font-family: Georgia, sans-serif;
+	color:       white;
+	font-size:	 50px;
+}
+
+a, a:visited, a:hover, a:active {
+	color: blue;
+	text-decoration: underline;
+	cursor: pointer;
+}

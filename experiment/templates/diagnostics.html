@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block extra_code %}
+{% load staticfiles %}
+<script type="text/javascript" src="{% static 'js/diagnostics.js' %}"></script>
+<link rel="stylesheet" href="{% static 'css/diagnostics.css' %}" />
+{% endblock %}
+{% block title %}Diagnostics{% endblock %}
+{% block main %}
+<p><span class="green">You have completed the experiment!</span> Thank you for participating. Before we reveal your earnings, please fill out these diagnostic questions:</p>
+<form id="diagnostics_form" action="/diagnostics/" method="POST">
+    <ol>
+        <li>Asset A has an initial value of $100, and grows at an interest rate of 10% each period. Asset B has an initial value of $X, and does not grow. What value of X will cause the two assets to be of equal value after 20 periods?<br />
+        <span class="answer">Answer: {{ form.question_1 }}</span></li>
+        <li>Asset A has an initial value of $100, and grows at an interest rate of 5% each period. Asset B has an initial value of $X, and does not grow. What value of X will cause the two assets to be of equal value after 50 periods?<br />
+        <span class="answer">Answer: {{ form.question_2 }}</span></li>
+        <li>Asset A has an initial value of $100, and grows at an interest rate of 4% each period. Asset B has an initial value of $X, and does not grow. What value of X will cause the two assets to be of equal value after 1 periods?<br />
+        <span class="answer">Answer: {{ form.question_3 }}</span></li>
+        <li>Asset A has an initial value of $500, and grows at an interest rate of -8% each period. Asset B has an initial value of $X, and does not grow. What value of X will cause the two assets to be of equal value after 10 periods?<br />
+        <span class="answer">Answer: {{ form.question_4 }}</span></li>
+        </ol>
+        <center><input type="button" value="Submit" onClick="check_response('diagnostics_form', [{{ ids }}])" /></center>
+</form>
+{% endblock %}

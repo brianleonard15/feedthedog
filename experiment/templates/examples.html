@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block extra_code %}
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'css/examples.css' %}" />
+{% endblock %}
+{% block title %}Examples{% endblock %}
+{% block main %}
+<p>Let's run through some examples.<p>{% if dynamic %}
+<p>In each round, at the beginning of the round, you will choose how much the dog eats on the first day. When you click to continue you will see how much money you have. You will then choose how much the dog eats on the second day. This process iterates until you complete the second to last day. Any remaining wealth is used to purchase dog food in the last day.</p>
+<p><span class="example_header">Example 1</span><br />
+Suppose there are three days, <i>i</i> = 0, and you receive 10 bucks on Monday and 0 in all other periods. At this point, you specify how much food you wish to purchase for the dog on Monday. Suppose you type:</p>
+
+<ul>
+    <li>Monday: 6 units.</li>
+</ul>
+
+<p>The next screen will indicate that you have 4 bucks to spend. Since no income is received in future periods you cannot take a loan since you wouldn’t be able to pay it off. Suppose you type:</p>
+
+<ul>
+    <li>Tuesday: 4 units</li>
+</ul>
+
+<p>Since there are no bucks remaining, 0 units of dog food are eaten in Period 2. The total number of tail wags generated is 6^(1/2) + 4^(1/2) = 4.4</p>
+
+<p><span class="example_header">Example 2:</span><br />
+Suppose you have the dog for two days, <i>i</i> = 100%, and you receive 30 bucks on Tuesday and 0 on Monday. Suppose you list the following amounts of food:</p>
+<ul>
+    <li>Monday: 10 units</li>
+</ul>{% else %}
+<p>At the beginning of each round, you will choose how much the dog eats for each period. The food will be purchased in the order of the periods. If you specify a quantity that exceeds your overall ability to pay (even with loans), you will purchase the amount that you can afford and consumption in all subsequent periods will be zero.</p>
+<p><span class="example_header">Example 1:</span><br />
+Suppose you have the dog for three days, <i>i</i> = 0, and you receive 10 bucks in <i>t</i> = 0 and 0 in all other periods. At this point, you specify how much food you wish to purchase for the dog in each of the three days. Suppose you list the following amounts of food:</p>
+
+<ul>
+    <li>Monday: 6 units</li>
+    <li>Tuesday: 7 units</li>
+    <li>Wednesday: Any remaining money will be spent on food in Wednesday.</li>
+</ul>
+<p>6 bucks were spent on Monday, which was less than your allotment of 10 bucks in that period. This means that (10-6)=4 bucks were automatically saved. The interest rate is zero, so your savings increased your Tuesday allotment by 4. Since the Tuesday allotment would have been zero otherwise, your new Tuesday allotment becomes 4 bucks.</p>
+<p>Your plan asks to buy 7 units of dog food on Tuesday. Because your Tuesday allotment is only 4 bucks, and there are no positive allotments remaining to borrow against, the computer will only allow 4 bucks to be spent. You will therefore purchase 4 units of dog food on Tuesday. Since there is no money left over, the computer will also buy 0 units of dog food on Wednesday.The total number of tail wags generated is 6^(1/2) + 4^(1/2) = 4.4</p>
+<p><span class="example_header">Example 2:</span><br />
+Suppose you have the dog for two days, <i>i</i> = 100%, and you receive 30 bucks on Tuesday and 0 on Monday. Suppose you list the following amounts of food:</p><ul>
+    <li>Monday: 10 units</li>
+    <li>Tuesday: The remaining money will be spent on food in period 1.</li>
+</ul>
+{% endif %}
+<p>10 bucks were spent on Monday, which was more than your allotment of 0 bucks for that day. This means that (10-0)=10 bucks were automatically borrowed. The interest rate is 100%, so your borrowing decreased your Tuesday allotment by (10 × 2) = 20 bucks. This means that there are (30-20)=10 bucks that are automatically spent on food on Tuesday. The total number of tail wags generated is 10^(1/2) + 10^(1/2) = 6.3</p>
+
+<p><b>Make sure you understand these examples before continuing</b><br />Click below to begin the training session.</p>
+
+<center><button type="button" onClick="redirect('training')">Continue</button></center>
+{% endblock %}

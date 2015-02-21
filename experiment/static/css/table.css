@@ -1,0 +1,28 @@
+
+#example_table {
+    border-collapse: collapse;
+    margin: 0px auto 20px auto;
+}
+
+#example_table td {
+    border: 1px solid black;
+    padding: 2px 4px;
+}
+
+#example_table #table_header {
+    text-align: center;
+    text-decoration: underline;
+    border: none;
+    border-bottom: 1px solid black;
+}  
+
+#example_table .row_header {
+    text-align: left;
+    font-weight: bold;
+}
+
+#example_table .cell {
+    text-align: center;
+    width: 20px;
+    font: 10pt sans-serif;
+}

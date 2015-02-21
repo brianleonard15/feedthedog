@@ -1,0 +1,13 @@
+.bold {
+	font-weight: bold;
+}
+
+.underlined {
+    text-decoration: underline;
+}
+
+.consent_header {
+    font-weight:     bold;
+    text-decoration: underline;
+    margin-right:    20px;
+}

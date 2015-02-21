@@ -1,0 +1,45 @@
+<html>
+<head>
+{% load staticfiles %}
+<script type="text/javascript" src="{% static 'js/base.js' %}"></script>
+<link rel="stylesheet" href="{% static 'css/base.css' %}" />
+{% block extra_code %}{% endblock %}
+<title>Individual Decision Making Experiment</title>
+</head>
+
+<body>
+<div id="total_page">
+    <div id="main_wrapper" class="centered rounded">
+        <div id="top_bar" class="rounded">
+            <table id="page_header">
+                <tr>
+                    <td class="title">{% block title %}{% endblock %}</td>
+                    <td class="login">
+                        <div id="login_box" class="rounded">
+                            <div id="login_contents">
+                                {% if anonymous %}
+                                <form method="POST">
+                                    <table id="login_table">
+                                        {{ form.as_table }}
+                                    </table>
+                                    <input type="submit" value="Log In" />
+                                </form>
+                                {% else %}
+                                <div id="login_name">Logged in as <span class="highlight">{{ user }}</span>.</div>
+                                <div><button onClick="redirect('logout');">Logout</button></div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+            
+
+        <div id="main" class="rounded">
+        {% block main %}{% endblock %}
+        </div>
+    </div>
+</div>
+</body>
+</html>

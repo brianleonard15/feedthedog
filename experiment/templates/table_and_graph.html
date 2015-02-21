@@ -1,0 +1,37 @@
+
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'css/table.css' %}" />
+
+<table id="example_table">
+    <tr>
+        <td colspan="11" id="table_header">How food affects wags</td>
+    </tr>
+    <tr>
+        <td class="row_header">Food</td>
+        <td class="cell">0</td>
+        <td class="cell">5</td>
+        <td class="cell">10</td>
+        <td class="cell">25</td>
+        <td class="cell">50</td>
+        <td class="cell">100</td>
+        <td class="cell">150</td>
+        <td class="cell">200</td>
+        <td class="cell">300</td>
+        <td class="cell">500</td>
+    </tr>
+    <tr>
+        <td class="row_header">Wags</td>
+        <td class="cell">0</td>
+        <td class="cell">2.24</td>
+        <td class="cell">3.16</td>
+        <td class="cell">5</td>
+        <td class="cell">7.1</td>
+        <td class="cell">10</td>
+        <td class="cell">12.2</td>
+        <td class="cell">14.1</td>
+        <td class="cell">17.3</td>
+        <td class="cell">22.4</td>
+    </tr>
+</table>
+
+<center><img src="{% static 'images/wags vs food.jpg' %}" /></center>

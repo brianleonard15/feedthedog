@@ -1,0 +1,30 @@
+.training_header {
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+.schedule {
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.schedule td {
+    border: 1px solid black;
+    padding: 2px 4px;
+}
+
+.schedule .header {
+    background-color: rgb(220, 220, 220);
+    font-weight: bold;
+}
+
+.schedule .data {
+    text-align: center;
+    font: 10pt sans-serif;
+}
+
+#limit {
+    font-weight: bold;
+}

@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block extra_code %}
+{% load staticfiles %}
+<script type="text/javascript" src="{% static 'js/experiment.js' %}"></script>
+<link rel="stylesheet" href="{% static 'css/training.css' %}" />
+<link rel="stylesheet" href="{% static 'css/dynamic.css' %}" />
+{% endblock %}
+{% block title %}Training{% endblock %}
+{% block main %}
+<p><span class="training_header">Training Session ({{ index }})</span><br />
+You are tasked with feeding the dog for five days. The table below gives your income and the interest rates in each of the five days.</p>
+
+<table class="schedule">
+    <tr>
+        <td class="header">Day</td>{% for day in problem.days %}
+        <td>{{ day }}</td>{% endfor %}
+    </tr>
+    <tr>
+        <td class="header">Income</td>{% for income in problem.incomes %}
+        <td class="data">{{ income }}</td>{% endfor %}
+    </tr>
+    <tr>
+        <td class="header">Interest</td>{% for interest in problem.interests %}
+        <td class="data">{{ interest }}%</td>{% endfor %}
+        <td class="data">-</td>
+    </tr>{% if class == "dynamic" %}
+    <tr>
+        <td class="header">Your Spending</td>{% for spending in dynamic.spendings %}
+        <td class="data">{{ spending }}</td>{% endfor %}
+        </tr>{% endif %}
+</table>
+
+{% if class == "dynamic" %}<p>Today you can spend at most <span id="limit">${{ dynamic.spendable }}</span>. <b>${{ dynamic.money }}</b> of that amount is money left over from previous days, and <b>${{ dynamic.borrowable }}</b> can be borrowed from future days. Be careful with borrowing though! If you borrow too much, you will not be able to spend any money in later days.</p>{% endif %}
+
+<p>Below, please specify how much dog food you wish to purchase.</p>
+
+<div class="response_div">
+    <form id="response_form" action="/training/" method="POST">
+    <table class="response_table">{% if days_inputs.Monday %}
+        <tr>
+            <td class="response_header">Food for Monday:</td>
+            <td>{{ form.Monday }}</td>
+        </tr>{% endif %}{% if days_inputs.Tuesday %}
+        <tr>
+            <td class="response_header">Food for Tuesday:</td>
+            <td>{{ form.Tuesday }}</td>
+        </tr>{% endif %}{% if days_inputs.Wednesday %}
+        <tr>
+            <td class="response_header">Food for Wednesday:</td>
+            <td>{{ form.Wednesday }}</td>
+        </tr>{% endif %}{% if days_inputs.Thursday %}
+        <tr>
+            <td class="response_header">Food for Thursday:</td>
+            <td>{{ form.Thursday }}</td>
+        </tr>{% endif %}{% if days_inputs.Friday %}
+        <tr>
+            <td class="response_header">Food for Friday:</td>
+            <td>{{ form.Friday }}</td>
+        </tr>{% endif %}{% if days_inputs.Saturday %}
+        <tr>
+            <td class="response_header">Food for Saturday:</td>
+            <td>{{ form.Saturday }}</td>
+        </tr>{% endif %}{% if days_inputs.Sunday %}
+        <tr>
+            <td class="response_header">Food for Sunday:</td>
+            <td>{{ form.Sunday }}</td>
+        </tr>{% endif %}
+    </table>
+    <input type="button" value="Submit" onClick="check_response('response_form', [{% for day in days %}'{{ day }}'{% if not forloop.last %},{% endif %}{% endfor %}]{% if class == 'dynamic' %}, {{ dynamic.spendable }}{% endif %})" />
+    </form>
+</div>
+
+{% include 'calculator.html' %}
+<hr style="margin: 30px 0px;">
+{% include 'table_and_graph.html' %}
+{% endblock %}

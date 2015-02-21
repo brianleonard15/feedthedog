@@ -1,0 +1,15 @@
+
+li {
+    margin-bottom: 20px;
+}
+
+.diagnostic {
+    width: 50px;
+    border: 1px solid black;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+.answer {
+    font-weight: bold;
+}
