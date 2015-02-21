@@ -14,6 +14,11 @@ framework.
 
 """
 import os
+import sys
+
+path = '/feed_the_dog/'
+if path not in sys.path:
+    sys.path.append(path)
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "feed_the_dog.settings")
 
